@@ -8,7 +8,7 @@ export default function NavMenu() {
   const pathname = usePathname();
   console.log(pathname);
   return (
-    <nav className='hidden md:inline-flex w-1/3 items-center gap-5 capitalize text-sm'>
+    <nav className='hidden lg:inline-flex w-1/3 items-center gap-5 capitalize text-sm'>
       {navItems.map((item) => (
         <Link
           key={item.title}
