@@ -5,6 +5,7 @@ import './globals.css';
 
 import Header from '@/components/shared/header';
 import Footer from '@/components/shared/footer';
+import { ClerkProvider } from '@clerk/nextjs';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -27,12 +28,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body className={`${raleway.className} antialiased`}>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang='en' suppressHydrationWarning>
+        <body className={`${raleway.className} antialiased`}>
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
