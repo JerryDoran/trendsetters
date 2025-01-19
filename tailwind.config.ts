@@ -13,7 +13,7 @@ export default {
       colors: {
         // custom colors
         maestroDark: '#151515',
-        maestroLight: '#52525b',
+        maestroLight: '#999999',
         maestroOrange: '#fca99b',
         maestroLightBlue: '#7688db',
         maestroDarkBlue: '#6c7fd8',

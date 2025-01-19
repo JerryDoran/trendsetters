@@ -13,7 +13,7 @@ export default async function Header() {
   const user = await currentUser();
   console.log('[USER]:', user);
   return (
-    <header className='bg-white border-b border-gray-200 '>
+    <header className='bg-slate-50 border-b border-gray-200 '>
       <Container className='flex items-center justify-between p-5 gap-7 max-lg:pr-10 text-maestroLight'>
         <NavMenu />
         <div className='w-auto md:1/3 flex items-center gap-2 justify-center'>
@@ -35,7 +35,7 @@ export default async function Header() {
             </SignedIn>
             {!user && (
               <SignInButton mode='modal'>
-                <button className='text-sm font-medium text-maestroDark'>
+                <button className='text-xs font-semibold bg-maestroDark text-white px-3 py-1 rounded-md'>
                   Login
                 </button>
               </SignInButton>

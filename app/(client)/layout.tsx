@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Roboto, Raleway } from 'next/font/google';
 
-import './globals.css';
+import '../globals.css';
 
 import Header from '@/components/shared/header';
 import Footer from '@/components/shared/footer';
@@ -19,7 +19,7 @@ const raleway = Raleway({
 
 export const metadata: Metadata = {
   title: 'TrendSetters',
-  description: 'Eccomerce website for fashion',
+  description: 'Ecommerce website for fashion',
 };
 
 export default function RootLayout({

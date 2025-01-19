@@ -69,4 +69,7 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  .hover-effect {
+    @apply transition-all ease-in-out duration-300 cursor-pointer;
+  }
 }

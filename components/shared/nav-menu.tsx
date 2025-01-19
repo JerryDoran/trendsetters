@@ -16,7 +16,7 @@ export default function NavMenu() {
           className={`hover:text-maestroDark transition relative group ${
             pathname === item.href
               ? 'text-maestroDark font-semibold'
-              : 'text-maestroLight'
+              : 'text-gray-700'
           }`}
         >
           {item.title}
