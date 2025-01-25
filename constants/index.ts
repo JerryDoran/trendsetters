@@ -28,3 +28,30 @@ export const navItems = [
     href: '/gift',
   },
 ];
+
+export const productType = [
+  {
+    title: 'T-Shirt',
+    value: 'tshirt',
+  },
+  {
+    title: 'Jacket',
+    value: 'jacket',
+  },
+  {
+    title: 'Pants',
+    value: 'pants',
+  },
+  {
+    title: 'Hoodie',
+    value: 'hoodie',
+  },
+  {
+    title: 'Shorts',
+    value: 'short',
+  },
+  {
+    title: 'Accessories',
+    value: 'accessories',
+  },
+];
