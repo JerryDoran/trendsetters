@@ -48,10 +48,10 @@ export const productType = [
   },
   {
     title: 'Shorts',
-    value: 'short',
+    value: 'shorts',
   },
   {
-    title: 'Accessories',
-    value: 'accessories',
+    title: 'Others',
+    value: 'others',
   },
 ];

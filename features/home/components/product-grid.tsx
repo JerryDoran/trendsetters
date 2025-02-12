@@ -6,6 +6,8 @@ import FilterBar from './filter-bar';
 import { productType } from '@/constants';
 import { client } from '@/sanity/lib/client';
 import { Product } from '@/sanity.types';
+import ProductCard from '@/components/shared/product-card';
+import NoProductsAvailable from '@/components/shared/no-products';
 
 export default function ProductGrid() {
   const [selectedTab, setSelectedTab] = useState(productType[0]?.title || '');
@@ -38,14 +40,24 @@ export default function ProductGrid() {
   return (
     <div className='mt-10 flex items-center flex-col'>
       <FilterBar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
-      {loading ? (
+      {!loading ? (
         <div>
-          <span>Product is loading</span>
+          <span className='text-base'>Product is loading...</span>
         </div>
       ) : (
-        products?.map((product: Product) => (
-          <p key={product?._id}>{product?.name}</p>
-        ))
+        <>
+          {products?.length > 0 ? (
+            <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10 w-full place-items-center'>
+              {products?.map((product: Product) => (
+                <div className='' key={product?._id}>
+                  <ProductCard product={product} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <NoProductsAvailable selectedTab={selectedTab} />
+          )}
+        </>
       )}
     </div>
   );

@@ -12,8 +12,8 @@ export default function FilterBar({
   setSelectedTab,
 }: FilterBarProps) {
   return (
-    <div className='flex items-center gap-2 text-sm font-semibold'>
-      <div className='flex items-center gap-2'>
+    <div className='flex items-center gap-2 text-sm font-semibold flex-wrap justify-center'>
+      <div className='flex items-center gap-2 flex-wrap'>
         {productType?.map((tab) => (
           <button
             key={tab.value}
@@ -25,14 +25,14 @@ export default function FilterBar({
             {tab.title}
           </button>
         ))}
+        <Button
+          size='icon'
+          variant='outline'
+          className='border border-maestroDark px-4 py-1.5 md:px-6 md:py-2 rounded-full hover-effect hover:bg-maestroDark hover:text-white'
+        >
+          <Repeat className='size-4' />
+        </Button>
       </div>
-      <Button
-        size='icon'
-        variant='outline'
-        className='border border-maestroDark px-4 py-1.5 md:px-6 md:py-2 rounded-full hover-effect hover:bg-maestroDark hover:text-white'
-      >
-        <Repeat className='size-4' />
-      </Button>
     </div>
   );
 }
