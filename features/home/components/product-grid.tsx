@@ -8,6 +8,8 @@ import { client } from '@/sanity/lib/client';
 import { Product } from '@/sanity.types';
 import ProductCard from '@/components/shared/product-card';
 import NoProductsAvailable from '@/components/shared/no-products';
+import { motion, AnimatePresence } from 'motion/react';
+import { Loader2 } from 'lucide-react';
 
 export default function ProductGrid() {
   const [selectedTab, setSelectedTab] = useState(productType[0]?.title || '');
@@ -40,9 +42,12 @@ export default function ProductGrid() {
   return (
     <div className='mt-10 flex items-center flex-col'>
       <FilterBar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
-      {!loading ? (
-        <div>
-          <span className='text-base'>Product is loading...</span>
+      {loading ? (
+        <div className='flex flex-col items-center justify-center py-10 min-h-80 space-y-4 text-center bg-gray-100 rounded-lg w-full mt-10'>
+          <div className='flex items-center gap-2 text-blue-600'>
+            <Loader2 className='size-5 animate-spin' />
+            <span className='text-base'>Product is loading...</span>
+          </div>
         </div>
       ) : (
         <>
