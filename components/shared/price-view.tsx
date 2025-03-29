@@ -2,7 +2,7 @@ import { cn, formatCurrency } from '@/lib/utils';
 
 type PriceViewProps = {
   price: number | undefined;
-  discount: number | undefined;
+  discount?: number | undefined;
   className?: string;
 };
 

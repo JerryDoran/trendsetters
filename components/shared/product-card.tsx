@@ -12,10 +12,13 @@ type ProductCardProps = {
 export default function ProductCard({ product }: ProductCardProps) {
   console.log(product);
   return (
-    <div className='group text-sm rounded-lg overflow-hidden w-[300px] h-[500px]'>
+    <div className='group text-sm rounded-lg overflow-hidden w-[300px] h-[550px]'>
       <div className='bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-400 h-72 overflow-hidden relative'>
         {product?.images && (
-          <Link href='/product'>
+          <Link
+            href={`/product/${product?.slug?.current}`}
+            className='w-full h-full'
+          >
             <Image
               src={urlFor(product?.images[0]).url()}
               width={500}
